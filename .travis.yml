@@ -8,4 +8,4 @@ script:
   - docker build -t rohansawant/tcsca-database ./database
   - docker build -t rohansawant/tcsca-proxy --file ./proxy/Dockerfile-prod ./proxy
   - docker build -t rohansawant/tcsca-redis ./redis
-  - docker build -t rohansawant/tcsca-worker ./worker
+  - docker build -t rohansawant/tcsca-worker --file ./worker/Dockerfile-prod .
