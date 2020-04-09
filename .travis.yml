@@ -10,3 +10,10 @@ script:
   - docker build -t rohansawant/tcsca-proxy --file ./proxy/Dockerfile-prod ./proxy
   - docker build -t rohansawant/tcsca-redis ./redis
   - docker build -t rohansawant/tcsca-worker --file ./worker/Dockerfile .
+
+  - docker push rohansawant/tcsca-api
+  - docker push rohansawant/tcsca-client
+  - docker push rohansawant/tcsca-database
+  - docker push rohansawant/tcsca-proxy
+  - docker push rohansawant/tcsca-redis
+  - docker push rohansawant/tcsca-worker
