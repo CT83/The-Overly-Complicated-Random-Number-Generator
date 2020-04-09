@@ -1,9 +1,12 @@
 sudo: required
-services: 
+services:
   - docker
 
 script:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin  
+  - echo "Pass"
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker build -t rohansawant/tcsca-api ./api
   - docker build -t rohansawant/tcsca-client --file ./client/Dockerfile-prod ./client
   - docker build -t rohansawant/tcsca-database ./database
