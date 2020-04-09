@@ -8,9 +8,10 @@ from shared.factories import rq
 class TasksRes(Resource):
 
     def post(self):
-        job = background_task.queue()
+        seed = request.get_json()['seed']
+        job = background_task.queue(seed)
         return {"message": "Job added to queue",
-                "job_key": job.id, }
+                "job_id": job.id, }
 
     def get(self):
         job_key = request.args['job_key']
@@ -19,4 +20,5 @@ class TasksRes(Resource):
         return {"msg": {"is_started": job.is_started,
                         "is_queued": job.is_queued,
                         "is_finished": job.is_finished,
-                        "result": job.result}}
+                        },
+                "result": job.result}
