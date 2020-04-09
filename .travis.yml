@@ -1,0 +1,11 @@
+sudo: required
+services: 
+  - docker
+
+script:
+  - docker build -t rohansawant/tcsca-api ./api
+  - docker build -t rohansawant/tcsca-client --file ./client/Dockerfile-prod ./client
+  - docker build -t rohansawant/tcsca-database ./database
+  - docker build -t rohansawant/tcsca-proxy --file ./proxy/Dockerfile-prod ./proxy
+  - docker build -t rohansawant/tcsca-redis ./redis
+  - docker build -t rohansawant/tcsca-worker ./worker
