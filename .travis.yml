@@ -3,6 +3,7 @@ services:
   - docker
 
 script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID"
   - docker build -t rohansawant/tcsca-api ./api
   - docker build -t rohansawant/tcsca-client --file ./client/Dockerfile-prod ./client
   - docker build -t rohansawant/tcsca-database ./database
