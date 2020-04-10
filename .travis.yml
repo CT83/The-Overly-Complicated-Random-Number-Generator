@@ -8,11 +8,14 @@ script:
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker build -t rohansawant/tcsca-api ./api
-  - docker build -t rohansawant/tcsca-client --file ./client/Dockerfile-prod ./client
+  - docker build -t rohansawant/tcsca-client ./client
   - docker build -t rohansawant/tcsca-database ./database
-  - docker build -t rohansawant/tcsca-proxy --file ./proxy/Dockerfile-prod ./proxy
+  - docker build -t rohansawant/tcsca-proxy ./proxy
   - docker build -t rohansawant/tcsca-redis ./redis
   - docker build -t rohansawant/tcsca-worker --file ./worker/Dockerfile .
+  - docker build -t rohansawant/tcsca-proxy-prod --file ./proxy/Dockerfile-prod ./proxy
+  - docker build -t rohansawant/tcsca-client-prod --file ./client/Dockerfile-prod ./client
+
 
   - docker push rohansawant/tcsca-api
   - docker push rohansawant/tcsca-client
@@ -20,3 +23,5 @@ after_success:
   - docker push rohansawant/tcsca-proxy
   - docker push rohansawant/tcsca-redis
   - docker push rohansawant/tcsca-worker
+  - docker push rohansawant/tcsca-client-prod
+  - docker push rohansawant/tcsca-proxy-prod
