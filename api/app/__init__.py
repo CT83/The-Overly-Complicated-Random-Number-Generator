@@ -2,7 +2,7 @@ from flask import Flask
 from flask_cors import CORS
 from flask_restful import Api
 
-from app.api.tasks.tasks import TasksRes
+from app.api.tasks.tasks import TasksRes, HelloWorldRes
 from config import config
 from shared.utils import db_connection_successful
 
@@ -15,6 +15,7 @@ def create_app(config_name):
 
     api = Api(app)
     api.add_resource(TasksRes, '/tasks')
+    api.add_resource(HelloWorldRes, '/hello-world')
 
     from shared.factories import rq
     rq.init_app(app)

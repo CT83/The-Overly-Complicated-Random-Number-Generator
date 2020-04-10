@@ -22,3 +22,9 @@ class TasksRes(Resource):
                         "is_finished": job.is_finished,
                         },
                 "result": job.result}
+
+
+class HelloWorldRes(Resource):
+
+    def get(self):
+        return "Hello World"
