@@ -31,7 +31,7 @@ Easy peasy lemon squeezy. 🍋💦
 ### Aim 
 
 * To illustrate how containerization actually looks in the wild
-* We will be skipping how the actual Python, Javascript Apps work, as we want to focus on containerization here, you can find all of the code on Github
+* We will be skipping how the actual Python, JavaScript Apps work, as we want to focus on containerization here, you can find all of the code on [Github - CT83/The-Complicated-Simple-Container-App](https://github.com/CT83/The-Complicated-Simple-Container-App)
 
 
 
