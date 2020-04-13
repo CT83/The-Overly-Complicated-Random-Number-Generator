@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tcsca-client-prod
+  labels:
+    component: web
+spec:
+  containers:
+  - name: client
+    image: rohansawant/tcsca-client-prod
+    ports:
+      - containerPort: 80

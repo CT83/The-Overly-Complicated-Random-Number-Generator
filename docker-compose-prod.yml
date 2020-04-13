@@ -38,8 +38,6 @@ services:
       - .env
     depends_on:
       - database
-    volumes:
-      - ./api:/app
 
   worker:
     container_name: worker
