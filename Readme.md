@@ -31,6 +31,7 @@ Easy peasy lemon squeezy. 🍋💦
 ### Aim 
 
 * To illustrate how containerization actually looks in the wild
+* We will be skipping how the actual Python, Javascript Apps work, as we want to focus on containerization here, you can find all of the code on Github
 
 
 
@@ -101,8 +102,6 @@ services:
 ```
 
 You can find the development [docker-compose.yml here](https://github.com/CT83/The-Complicated-Simple-Container-App/blob/master/docker-compose.yml). It even supports Live Reloading for both, the Flask and React Container!
-
-
 
 ## Next Steps
 
