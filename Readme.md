@@ -1,4 +1,4 @@
-# The-Complicated-Simple-Container-App
+# The-Overly-Complicated-Random-Number-Generator
 [![Build Status](https://travis-ci.org/CT83/The-Complicated-Simple-Container-App.svg?branch=master)](https://travis-ci.org/CT83/The-Complicated-Simple-Container-App)
 
 This is an Overly Complex Random Number Generator, created to demystify how containers work. 
