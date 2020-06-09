@@ -26,5 +26,8 @@ class TasksRes(Resource):
 
 class HelloWorldRes(Resource):
 
+    def post(self):
+        return {"msg": request.get_json()}
+
     def get(self):
-        return "Hello World"
+        return {"msg": "Hello World"}

@@ -14,5 +14,6 @@ RUN chmod +x start_flask.sh
 
 ENV FLASK_APP=main_app.py
 ENV FLASK_ENV=development
+RUN python3 -m pytest
 
 CMD ["./start_flask.sh"]
