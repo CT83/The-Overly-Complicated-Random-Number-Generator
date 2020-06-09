@@ -6,7 +6,7 @@ services:
     build: proxy/.
     ports:
       - 80:80
-    restart: on-failure:3
+    restart: on-failure:10
 
   database:
     container_name: database
