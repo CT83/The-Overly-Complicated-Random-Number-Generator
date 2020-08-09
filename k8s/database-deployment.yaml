@@ -12,8 +12,23 @@ spec:
       labels:
         component: database
     spec:
+      volumes:
+        - name: database-storage
+          persistentVolumeClaim:
+            claimName: database-persistent-volume-claim
       containers:
-      - name: database
-        image: rohansawant/tcsca-database
-        ports:
-          - containerPort: 5432
+        - name: database
+          image: rohansawant/tcsca-database
+          volumeMounts:
+            - name: database-storage
+              mountPath: /var/lib/postgresql/data
+              subPath: postgres
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_USER
+              value: user
+            - name: POSTGRES_DB
+              value: anno_db
+            - name: POSTGRES_PASSWORD
+              value: hardpassword

@@ -13,7 +13,22 @@ spec:
         component: api
     spec:
       containers:
-      - name: api
-        image: rohansawant/tcsca-api
-        ports:
-          - containerPort: 8000
+        - name: api
+          image: rohansawant/tcsca-api
+          ports:
+            - containerPort: 8000
+          env:
+            - name: REDIS_HOST
+              value: redis-cluster-ip-service
+            - name: REDIS_PORT
+              value: "6379"
+            - name: POSTGRES_USER
+              value: user
+            - name: DBHOST
+              value: database-cluster-ip-service
+            - name: DBPORT
+              value: "5432"
+            - name: POSTGRES_DB
+              value: anno_db
+            - name: POSTGRES_PASSWORD
+              value: hardpassword
